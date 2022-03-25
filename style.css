@@ -1,0 +1,40 @@
+body{
+    background-image: url("https://previews.123rf.com/images/3dart/3dart1304/3dart130400062/18936069-3d-numbers-wallpaper.jpg");
+}
+
+div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.calculator{
+    margin-top: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    /* border: 2px solid black; */
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px black;
+    background: #0BA2B3;
+    border-radius: 10px;
+}
+
+div.screen{
+    width: 300px;
+    height: 50px;
+    border: 1px solid wheat;
+    background: #A0A0A0;
+    border-radius: 10px;
+}
+
+div.buttons{
+    width: 300px;
+    height: 350px;
+    border:1px solid wheat;
+    background: #A0A0A0;
+    border-radius: 10px;
+}
