@@ -16,55 +16,88 @@ const subtractButton = document.querySelector("button.subtract");
 const divideButton = document.querySelector("button.divide");
 const multiplyButton = document.querySelector("button.multiply");
 const equalsButton = document.querySelector("button.equals");
-const screen = document.querySelector("div.screen");
+const equationSreen = document.querySelector("div.equation");
+const answerScreen = document.querySelector("div.answer");
+const deleteButton = document.querySelector("button.delete");
+const clearButton = document.querySelector("button.clear");
+const negativeButton = document.querySelector("button.negative");
+
+
+//--------Variables-------------------------/
+let answer = 0;
 
 //--------------Event Listeners--------------------//
-oneButton.addEventListener("click",  () => {
-    screen.innerHTML += "1 ";
+oneButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "1";
+    answerScreen.innerHTML = "1";
+    answer += 1;
 })
-twoButton.addEventListener("click",  () => {
-    screen.innerHTML += "2 ";
+twoButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "2";
+    answerScreen.innerHTML = "2";
 })
-threeButton.addEventListener("click",  () => {
-    screen.innerHTML += "3 ";
+threeButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "3";
+    answerScreen.innerHTML = "3";
 })
-fourButton.addEventListener("click",  () => {
-    screen.innerHTML += "4 ";
+fourButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "4";
+    answerScreen.innerHTML = "4";
 })
-fiveButton.addEventListener("click",  () => {
-    screen.innerHTML += "5 ";
+fiveButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "5";
+    answerScreen.innerHTML = "5";
 })
-sixButton.addEventListener("click",  () => {
-    screen.innerHTML += "6 ";
+sixButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "6";
+    answerScreen.innerHTML = "6";
 })
-sevenButton.addEventListener("click",  () => {
-    screen.innerHTML += "7 ";
+sevenButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "7";
+    answerScreen.innerHTML = "7";
 })
-eightButton.addEventListener("click",  () => {
-    screen.innerHTML += "8 ";
+eightButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "8";
+    answerScreen.innerHTML = "8";
 })
-nineButton.addEventListener("click",  () => {
-    screen.innerHTML += "9 ";
+nineButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "9";
+    answerScreen.innerHTML = "9";
 })
-zeroButton.addEventListener("click",  () => {
-    screen.innerHTML += "0 ";
+zeroButton.addEventListener("click", () => {
+    equationSreen.innerHTML += "0";
+    answerScreen.innerHTML = "0";
 })
-dotButton.addEventListener("click",  () => {
-    screen.innerHTML += ". ";
+dotButton.addEventListener("click", () => {
+    equationSreen.innerHTML += ".";
 })
-addButton.addEventListener("click",  () => {
-    screen.innerHTML += "+ ";
+addButton.addEventListener("click", () => {
+    equationSreen.innerHTML += " + ";
 })
-subtractButton.addEventListener("click",  () => {
-    screen.innerHTML += "- ";
+subtractButton.addEventListener("click", () => {
+    equationSreen.innerHTML += " - ";
 })
-divideButton.addEventListener("click",  () => {
-    screen.innerHTML += "÷ ";
+divideButton.addEventListener("click", () => {
+    equationSreen.innerHTML += " ÷ ";
 })
-multiplyButton.addEventListener("click",  () => {
-    screen.innerHTML += "x ";
+multiplyButton.addEventListener("click", () => {
+    equationSreen.innerHTML += " x ";
 })
-equalsButton.addEventListener("click",  () => {
-    screen.innerHTML += "= ";
+equalsButton.addEventListener("click", () => {
+    equationSreen.innerHTML += " = ";
+})
+
+negativeButton.addEventListener("click", () => {
+    answer *= -1;
+    console.log("negative");
+    answerScreen.innerHTML = "NEGATIVE";
+})
+
+deleteButton.addEventListener("click", () => {
+    console.log("delete");
+})
+
+clearButton.addEventListener("click", () => {
+    console.log("Clearing");
 })
 
