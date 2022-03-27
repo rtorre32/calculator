@@ -29,125 +29,92 @@ let number = "";
 let equation = "";
 let firstNumber;
 let secondNumber;
-let lastClick = clearButton;
+let operation;
+let isInt = 1;
 
 //--------------Event Listeners--------------------//
 oneButton.addEventListener("click", () => {
-    equation += "1";
     number += "1";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = oneButton;
 })
 twoButton.addEventListener("click", () => {
-    equation += "2";
     number += "2";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = twoButton;
 })
 threeButton.addEventListener("click", () => {
-    equation += "3";
     number += "3";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = threeButton;
 })
 fourButton.addEventListener("click", () => {
-    equation += "4";
     number += "4";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = fourButton;
 })
 fiveButton.addEventListener("click", () => {
-    equation += "5";
     number += "5";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = fiveButton;
 })
 sixButton.addEventListener("click", () => {
-    equation += "6";
     number += "6";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = sixButton;
 })
 sevenButton.addEventListener("click", () => {
-    equation += "7";
     number += "7";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = sevenButton;
 })
 eightButton.addEventListener("click", () => {
-    equation += "8";
     number += "8";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = eightButton;
 })
 nineButton.addEventListener("click", () => {
-    equation += "9";
     number += "9";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = nineButton;
 })
 zeroButton.addEventListener("click", () => {
-    equation += "0";
     number += "0";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = zeroButton;
 })
 dotButton.addEventListener("click", () => {
-    equation += ".";
+    isInt = 0;
     number += ".";
-    equationSreen.innerHTML = equation;
     answerScreen.innerHTML = number;
-    lastClick = dotButton;
 })
 addButton.addEventListener("click", () => {
+    getFirstNumber();
     equation += " + ";
-    firstNumber = parseInt(number);
-    number = "";
     equationSreen.innerHTML = equation;
-    lastClick = addButton;
+    operation = "+";
 })
 subtractButton.addEventListener("click", () => {
+    getFirstNumber();
     equation += " - ";
-    firstNumber = parseInt(number);
-    number = "";
     equationSreen.innerHTML = equation;
-    lastClick = subtractButton;
+    operation = "-";
 })
 divideButton.addEventListener("click", () => {
+    getFirstNumber();
     equation += " ÷ ";
-    firstNumber = parseInt(number);
-    number = "";
     equationSreen.innerHTML = equation;
-    lastClick = divideButton;
+    operation = "÷";
 })
 multiplyButton.addEventListener("click", () => {
+    getFirstNumber();
     equation += " x ";
     equationSreen.innerHTML = equation;
-    lastClick = multiplyButton;
+    operation = "x";
 })
 equalsButton.addEventListener("click", () => {
-    equation += " = ";
+    equalsFunction();
     equationSreen.innerHTML = equation;
-    lastClick = equalsButton;
 })
 
 negativeButton.addEventListener("click", () => {
-    answer *= -1;
-    lastClick = negativeButton;
+    number = "-".concat(number);
+    answerScreen.innerHTML = number;
 })
 
 deleteButton.addEventListener("click", () => {
-    lastClick = deleteButton;
+    number = "";
+    answerScreen.innerHTML = number;
 })
 
 clearButton.addEventListener("click", () => {
@@ -156,6 +123,56 @@ clearButton.addEventListener("click", () => {
     equation = "";
     equationSreen.innerHTML = "";
     answerScreen.innerHTML = "";
-    lastClick = clearButton;
 })
+
+
+//---------------------Functions---------------//
+
+function getFirstNumber(){
+    if(!isInt){
+        firstNumber = parseFloat(number);
+        isInt = 1;
+    }
+    else{
+        firstNumber = parseInt(number);
+    }
+    equation += number;
+    number = "";
+}
+
+function equalsFunction(){
+    let secondNumber;
+    if(!isInt){
+        secondNumber = parseFloat(number);
+        isInt = 1;
+    }
+    else{
+        secondNumber = parseInt(number);
+    }
+    switch(operation){
+        case "+":
+            answer = firstNumber + secondNumber;
+            break;
+        case "-":
+            answer = firstNumber - secondNumber;
+            break;
+        case "x":
+            answer = firstNumber * secondNumber;
+            break;
+        case "÷":
+            answer = firstNumber / secondNumber;
+            break;
+    }
+
+    if(!Number.isInteger(answer)){
+        answer = answer.toFixed(2);
+    }
+
+    equation += secondNumber;
+    equation += " = ";
+    equation += answer;
+
+    firstNumber = answer;
+    answerScreen.innerHTML = answer;
+}
 
