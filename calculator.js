@@ -24,80 +24,138 @@ const negativeButton = document.querySelector("button.negative");
 
 
 //--------Variables-------------------------/
-let answer = 0;
+let answer = null;
+let number = "";
+let equation = "";
+let firstNumber;
+let secondNumber;
+let lastClick = clearButton;
 
 //--------------Event Listeners--------------------//
 oneButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "1";
-    answerScreen.innerHTML = "1";
-    answer += 1;
+    equation += "1";
+    number += "1";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = oneButton;
 })
 twoButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "2";
-    answerScreen.innerHTML = "2";
+    equation += "2";
+    number += "2";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = twoButton;
 })
 threeButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "3";
-    answerScreen.innerHTML = "3";
+    equation += "3";
+    number += "3";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = threeButton;
 })
 fourButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "4";
-    answerScreen.innerHTML = "4";
+    equation += "4";
+    number += "4";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = fourButton;
 })
 fiveButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "5";
-    answerScreen.innerHTML = "5";
+    equation += "5";
+    number += "5";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = fiveButton;
 })
 sixButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "6";
-    answerScreen.innerHTML = "6";
+    equation += "6";
+    number += "6";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = sixButton;
 })
 sevenButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "7";
-    answerScreen.innerHTML = "7";
+    equation += "7";
+    number += "7";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = sevenButton;
 })
 eightButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "8";
-    answerScreen.innerHTML = "8";
+    equation += "8";
+    number += "8";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = eightButton;
 })
 nineButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "9";
-    answerScreen.innerHTML = "9";
+    equation += "9";
+    number += "9";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = nineButton;
 })
 zeroButton.addEventListener("click", () => {
-    equationSreen.innerHTML += "0";
-    answerScreen.innerHTML = "0";
+    equation += "0";
+    number += "0";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = zeroButton;
 })
 dotButton.addEventListener("click", () => {
-    equationSreen.innerHTML += ".";
+    equation += ".";
+    number += ".";
+    equationSreen.innerHTML = equation;
+    answerScreen.innerHTML = number;
+    lastClick = dotButton;
 })
 addButton.addEventListener("click", () => {
-    equationSreen.innerHTML += " + ";
+    equation += " + ";
+    firstNumber = parseInt(number);
+    number = "";
+    equationSreen.innerHTML = equation;
+    lastClick = addButton;
 })
 subtractButton.addEventListener("click", () => {
-    equationSreen.innerHTML += " - ";
+    equation += " - ";
+    firstNumber = parseInt(number);
+    number = "";
+    equationSreen.innerHTML = equation;
+    lastClick = subtractButton;
 })
 divideButton.addEventListener("click", () => {
-    equationSreen.innerHTML += " ÷ ";
+    equation += " ÷ ";
+    firstNumber = parseInt(number);
+    number = "";
+    equationSreen.innerHTML = equation;
+    lastClick = divideButton;
 })
 multiplyButton.addEventListener("click", () => {
-    equationSreen.innerHTML += " x ";
+    equation += " x ";
+    equationSreen.innerHTML = equation;
+    lastClick = multiplyButton;
 })
 equalsButton.addEventListener("click", () => {
-    equationSreen.innerHTML += " = ";
+    equation += " = ";
+    equationSreen.innerHTML = equation;
+    lastClick = equalsButton;
 })
 
 negativeButton.addEventListener("click", () => {
     answer *= -1;
-    console.log("negative");
-    answerScreen.innerHTML = "NEGATIVE";
+    lastClick = negativeButton;
 })
 
 deleteButton.addEventListener("click", () => {
-    console.log("delete");
+    lastClick = deleteButton;
 })
 
 clearButton.addEventListener("click", () => {
-    console.log("Clearing");
+    answer = 0;
+    number = "";
+    equation = "";
+    equationSreen.innerHTML = "";
+    answerScreen.innerHTML = "";
+    lastClick = clearButton;
 })
 
