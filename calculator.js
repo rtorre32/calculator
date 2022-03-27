@@ -105,6 +105,7 @@ multiplyButton.addEventListener("click", () => {
 equalsButton.addEventListener("click", () => {
     equalsFunction();
     equationSreen.innerHTML = equation;
+    equation = "";
 })
 
 negativeButton.addEventListener("click", () => {
@@ -172,7 +173,7 @@ function equalsFunction(){
     equation += " = ";
     equation += answer;
 
-    firstNumber = answer;
+    number = answer.toString();
     answerScreen.innerHTML = answer;
 }
 
